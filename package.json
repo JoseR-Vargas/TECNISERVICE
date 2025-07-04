@@ -1,0 +1,13 @@
+{
+  "name": "tecniservice",
+  "version": "1.0.0",
+  "description": "Landing page para TECNISERVICE - Servicio Técnico Especializado",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s .",
+    "build": "echo 'No build needed for static site'"
+  },
+  "keywords": ["landing-page", "tecnico", "reparacion", "dispositivos"],
+  "author": "TECNISERVICE",
+  "license": "MIT"
+} 
