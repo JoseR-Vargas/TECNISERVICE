@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initContactForm();
     initWhatsAppButton();
+    
+
 });
 
 // Función para el menú móvil
@@ -132,20 +134,8 @@ function initContactForm() {
 
 // Función para el botón de WhatsApp
 function initWhatsAppButton() {
-    const whatsappBtn = document.querySelector('.whatsapp-btn');
-    
-    if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Aquí puedes agregar el número de WhatsApp cuando esté disponible
-            const phoneNumber = '59865845531'; // Número de ejemplo
-            const message = 'Hola, me interesa conocer más sobre sus servicios técnicos.';
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            
-            window.open(whatsappUrl, '_blank');
-        });
-    }
+    // Función simple sin interceptar clics - permite comportamiento normal del navegador
+    console.log('WhatsApp buttons initialized');
 }
 
 // Función para mostrar notificaciones
@@ -323,4 +313,5 @@ function debugInfo() {
 // Llamar función de debug en modo desarrollo
 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     debugInfo();
-} 
+}
+
