@@ -117,16 +117,18 @@ function initContactForm() {
             e.preventDefault();
             
             const formData = new FormData(this);
-            const formDataObj = {};
-            
-            formData.forEach((value, key) => {
-                formDataObj[key] = value;
-            });
-            
-            // Simular envío de formulario
-            showNotification('¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.', 'success');
-            
-            // Limpiar formulario
+            const name = (formData.get('name') || '').trim();
+            const email = (formData.get('email') || '').trim();
+            const phone = (formData.get('phone') || '').trim();
+            const message = (formData.get('message') || '').trim();
+
+            const whatsappNumber = '59896584531';
+            const whatsappMessage = `Hola, soy ${name}.\nEmail: ${email}\nTeléfono: ${phone}\nConsulta: ${message}`;
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            window.open(whatsappUrl, '_blank');
+            showNotification('Abriendo WhatsApp para enviar tu mensaje.', 'success');
+
             this.reset();
         });
     }
@@ -314,4 +316,3 @@ function debugInfo() {
 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     debugInfo();
 }
-
